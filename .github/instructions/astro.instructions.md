@@ -32,6 +32,18 @@ const games = await getAllGames(getDatabase());
 </Layout>
 ```
 
+Document every reusable component's `Props` interface with a short TSDoc comment for the component contract and each prop. Include defaults, accepted values, and constraints when they are not obvious from the type:
+
+```astro
+---
+/** Page heading and document title shown by the layout. */
+interface Props {
+  /** Text rendered as the page heading. */
+  title: string;
+}
+---
+```
+
 ## Layouts
 
 - Create reusable layout components in `src/layouts/`
@@ -120,3 +132,5 @@ There is no Svelte/React layer. When a page genuinely needs client behaviour, ad
 - Minimize client-side JavaScript — the default is zero JS shipped
 - Import and use global CSS styles from layouts
 - Always include a `data-testid` on interactive elements (see `ui.instructions.md`)
+- Comment why a non-obvious implementation exists; do not restate markup, expressions, or control flow that the code already makes clear.
+- Keep component documentation current when changing props or their behavior.

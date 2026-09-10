@@ -35,7 +35,17 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
 ### Code formatting requirements
 
 - Use TypeScript with explicit types for function parameters and return values, especially in the data layer (`db/`, `src/lib/`)
-- Frontend code (TypeScript, Astro) must pass ESLint checks (`npm run lint`)
+- Use two-space indentation, single quotes in TypeScript, semicolons, trailing commas in multiline constructs, and `interface` declarations for object contracts.
+- Prefer `import type` for type-only imports and keep exported APIs narrow and explicitly typed.
+- Frontend code (TypeScript, Astro) must pass ESLint checks (`npm run lint`); ESLint enforces explicit types at exported module boundaries in `db/` and `src/lib/`.
+- Comment intent and decisions, not mechanics or code that is already self-explanatory. Remove comments that only restate the following line.
+- Keep comments and documentation current with the code they describe. Update or remove stale guidance in the same change.
+
+### Documentation requirements
+
+- Every exported function in `db/` and `src/lib/` must have TSDoc/JSDoc describing its purpose, each parameter, and its return value. Document injectable `db` parameters explicitly when a helper accepts one for testing.
+- Every reusable `.astro` component must document its `Props` interface, including the meaning of each prop and any important defaults or constraints.
+- Use comments for non-obvious intent, invariants, trade-offs, or external constraints; prefer clear names and types over explanatory comments for straightforward code.
 
 ### Data Layer Patterns (Drizzle + Node SQLite)
 
@@ -98,3 +108,4 @@ The application lives at the repository root:
 - `e2e-tests/`: Playwright E2E tests (home, games, accessibility)
 - `drizzle.config.ts`, `vitest.config.ts`, `astro.config.mjs`, `playwright.config.ts`: tooling config
 - `README.md`: Project documentation
+- `.github/instructions/`: coding standards for the data layer, Astro, styling, UI components, and tests
