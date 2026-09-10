@@ -52,3 +52,8 @@ ALL UI components MUST use dark theme colors:
 - Smooth transitions: `transition-all duration-200 ease-in-out`
 - Shadows for depth: `shadow-md`, `shadow-lg`, `shadow-xl`
 - Focus states for accessibility: `focus:ring-2 focus:ring-blue-500`
+
+## CSS comments
+
+- Use comments only for non-obvious design intent, browser workarounds, or constraints that cannot be expressed by the class names.
+- Do not add comments that restate a utility class or selector. Keep comments current when the related styles change.

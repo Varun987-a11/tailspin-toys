@@ -50,6 +50,13 @@ Refer to technology-specific instruction files:
 - Keep components focused on a single responsibility
 - Use props for configuration, not duplication
 - Document component APIs with TypeScript types
+- Add TSDoc comments to every reusable component's `Props` interface and its properties. Explain the component contract, intent, defaults, and constraints rather than repeating the property name or markup.
+
+### Comments and Documentation
+
+- Write comments that explain why a design or implementation exists, including non-obvious accessibility decisions and trade-offs.
+- Do not comment what clear HTML, TypeScript, or Tailwind already says; improve the name or type instead.
+- Treat stale comments as bugs and update or remove them whenever the related code changes.
 
 ## Development Workflow
 
